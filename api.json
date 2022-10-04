@@ -1,10 +1,10 @@
 {
 	"threads": 4,
-	"coin": "etc",
+	"coin": "egaz",
 	"name": "main",
         "pplns": 9000,
-	"network": "classic",
-	"coin-name":"etc",
+	"network": "etica",
+	"coin-name":"egaz",
 
 	"proxy": {
 		"enabled": true,
@@ -105,7 +105,7 @@
   
 	"exchange": {
 		   "enabled": true,
-		   "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum-classic",
+		   "url": "https://api.txbit.io/api/public/getmarketsummary?market=ETI/USDT",
 		   "timeout": "50s",
 		   "refreshInterval": "900s"
     },
