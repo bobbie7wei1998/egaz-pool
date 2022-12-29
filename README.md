@@ -48,7 +48,7 @@ Clone & compile:
     git clone https://github.com/yuriy0803/open-etc-pool-friends.git
     cd open-etc-pool-friends
     cd build
-    chmod 755 env.sh
+    chmod +x env.sh
     cd ..
     make
 
@@ -76,16 +76,16 @@ Install deps
 
     $ sudo npm install -g ember-cli@2.13
     $ sudo npm install -g bower
-    $ sudo chown -R $USER:$GROUP ~/.npm
-    $ sudo chown -R $USER:$GROUP ~/.config
     $ npm install
     $ bower install
+    $ sudo chown -R $USER:$GROUP ~/.npm
+    $ sudo chown -R $USER:$GROUP ~/.config
     $ ember install ember-truth-helpers
     $ npm install jdenticon@2.1.0
 
 Build.
      
-     chmod 755 build.sh
+     chmod +x build.sh
     ./build.sh
 
 Configure nginx to serve API on <code>/api</code> subdirectory.
@@ -169,7 +169,7 @@ otherwise you will get errors on start because of JSON comments.**
     // Try to get new job from node in this interval
     "blockRefreshInterval": "120ms",
     "stateUpdateInterval": "3s",
-    // Require this share difficulty from miners
+    // Require this share difficulty from miners (number is counted by hash)
     "difficulty": 2000000000,
 
     /* Reply error to miner instead of job if redis is unavailable.
@@ -287,11 +287,11 @@ otherwise you will get errors on start because of JSON comments.**
 
   // This module periodically remits ether to miners
   "unlocker": {
-    "enabled": false,
+    "enabled": true,
     // Pool fee percentage
     "poolFee": 1.0,
     // Pool fees beneficiary address (leave it blank to disable fee withdrawals)
-    "poolFeeAddress": "",
+    "poolFeeAddress": "Geth Wallet Address",
     // Donate 10% from pool fees to developers
     "donate": true,
     // Unlock only if this number of blocks mined back
@@ -310,7 +310,7 @@ otherwise you will get errors on start because of JSON comments.**
 
   // Pay out miners using this module
   "payouts": {
-    "enabled": false,
+    "enabled": true,
     // Require minimum number of peers on node
     "requirePeers": 25,
     // Run payouts in this interval
